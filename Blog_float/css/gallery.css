@@ -114,32 +114,123 @@ p {
     height: 325px;
     float: left;
 }
-/* 懒加载图片样式 */
-.lazy-img {
-    opacity: 0;
-    transition: opacity 0.3s ease-in-out;
-    filter: blur(5px);
+
+
+/* 确保图片包装器使用原有尺寸 */
+.across .image-wrapper {
+    width: 384px;
+    height: 285px;
+    display: block;
+    position: relative;
+    overflow: hidden;
 }
 
-.lazy-img.loaded {
-    opacity: 1;
-    filter: blur(0);
+.vertical .image-wrapper {
+    width: 285px;
+    height: 380px;
+    display: block;
+    position: relative;
+    overflow: hidden;
 }
 
-/* 占位符动画 */
+/* 懒加载图片使用原有尺寸 */
+.lazy-image {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: contain !important; /* 保持比例，不裁剪 */
+    display: none; /* 初始隐藏 */
+    border-radius: 2px; /* 保持圆角 */
+}
+
+.lazy-image.loaded {
+    display: block;
+}
+
+/* 状态类控制显示 */
+.image-wrapper.loading .image-placeholder,
+.image-wrapper.loading .image-loading {
+    display: block;
+}
+
+.image-wrapper.loading .lazy-image,
+.image-wrapper.loading .image-error {
+    display: none;
+}
+
+.image-wrapper.loaded .lazy-image {
+    display: block;
+}
+
+.image-wrapper.loaded .image-placeholder,
+.image-wrapper.loaded .image-loading,
+.image-wrapper.loaded .image-error {
+    display: none;
+}
+
+.image-wrapper.error .image-error {
+    display: flex;
+}
+
+.image-wrapper.error .image-placeholder,
+.image-wrapper.error .image-loading,
+.image-wrapper.error .lazy-image {
+    display: none;
+}
+
+/* 基础状态样式 */
+.image-placeholder {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, #f5f5f5 25%, #e8e8e8 37%, #f5f5f5 63%);
+    background-size: 400% 100%;
+    animation: shimmer 1.5s infinite linear;
+    border-radius: 2px;
+}
+
+.image-loading {
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 30px;
+    height: 30px;
+    border: 3px solid rgba(0,0,0,0.1);
+    border-top-color: #3498db;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    z-index: 2;
+}
+
+.image-error {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 2px;
+    color: #666;
+    text-align: center;
+    padding: 20px;
+    z-index: 3;
+}
+
+/* 动画定义 */
 @keyframes shimmer {
-    0% { background-position: -200px 0; }
-    100% { background-position: calc(200px + 100%) 0; }
+    0% { background-position: -400% 0; }
+    100% { background-position: 400% 0; }
 }
 
-.lazy-img:not(.loaded) {
-    background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
-    background-size: 200px 100%;
-    animation: shimmer 1.5s infinite;
-}
-
-/* 确保图片容器有固定宽高，避免布局抖动 */
-.across img, .vertical img {
-    min-height: 200px;
-    background-color: #f5f5f5;
+@keyframes spin {
+    0% { transform: translate(-50%, -50%) rotate(0deg); }
+    100% { transform: translate(-50%, -50%) rotate(360deg); }
 }

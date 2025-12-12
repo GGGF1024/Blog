@@ -138,7 +138,8 @@ function initAndPlay() {
 }
 
 // 播放模式设置
-var modeId = 1;
+var modeId = 3; // 1-顺序播放 2-循环播放 3-随机播放
+mode.style.backgroundImage = "url('img/mode" + modeId.toString() + ".png')";
 mode.addEventListener('click', function (event) {
     modeId = modeId + 1;
     if (modeId > 3) {
@@ -153,15 +154,24 @@ audio.onended = function () {
         musicId = (musicId + 1) % 14;
     }
     else if (modeId == 3) {
-        // 随机生成下一首歌的序号
+        // 随机生成下一首歌的序号 - 优化避免连续播放同一首歌
         var oldId = musicId;
-        while (true) {
-            musicId = Math.floor(Math.random() * 13) + 0;
-            if (musicId != oldId) { break; }
+        var attempts = 0;
+        while (attempts < 10) { // 最多尝试10次
+            musicId = Math.floor(Math.random() * 14); // 0-13
+            if (musicId != oldId) { 
+                break; 
+            }
+            attempts++;
+        }
+        // 如果10次都失败，就播下一首
+        if (attempts >= 10) {
+            musicId = (oldId + 1) % 14;
         }
     }
     initAndPlay();
 }
+
 
 // 上一首
 skipForward.addEventListener('click', function (event) {
