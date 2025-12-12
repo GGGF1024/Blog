@@ -70,76 +70,76 @@
             <div class="boxbanner"><p>&#128247风景</p></div>
             <div class="acrossNull"></div>
             <div class="across">
-                <img src="img/camera/风景/fj1.jpg">
+                <img data-src="img/camera/风景/fj1.jpg" loading="lazy" class="lazy-img">
                 <p>河北省邢台市·红薯岭</p>
             </div>
             <div class="acrossNull"></div>
             <div class="across">
-                <img src="img/camera/风景/fj2.jpg" style="margin-top: 37px;margin-bottom: 37px;">
+                <img data-src="img/camera/风景/fj2.jpg" loading="lazy" class="lazy-img" style="margin-top: 37px;margin-bottom: 37px;">
                 <p>北京·平谷</p>
             </div>
             <div class="acrossNull"></div>
             <div class="across">
-                <img src="img/camera/风景/fj3.jpg" style="margin-top: 35px;margin-bottom: 35px;">
+                <img data-src="img/camera/风景/fj3.jpg" loading="lazy" class="lazy-img" style="margin-top: 35px;margin-bottom: 35px;">
                 <p>北京·金海湖</p>
             </div>
             <div class="acrossNull"></div>
             <div class="across">
-                <img src="img/camera/风景/fj4.jpg" style="margin-top: 35px;margin-bottom: 35px;">
+                <img data-src="img/camera/风景/fj4.jpg" loading="lazy" class="lazy-img" style="margin-top: 35px;margin-bottom: 35px;">
                 <p>北京·平谷</p>
             </div>
             <div class="acrossNull"></div>
             <div class="across">
-                <img src="img/camera/风景/fj6.jpg">
+                <img data-src="img/camera/风景/fj6.jpg" loading="lazy" class="lazy-img">
                 <p>北京·金海湖</p>
             </div>
             <div class="acrossNull"></div>
             <div class="across">
-                <img src="img/camera/风景/fj5.jpg">
+                <img data-src="img/camera/风景/fj5.jpg" loading="lazy" class="lazy-img">
                 <p>西安城建</p>
             </div>
 
             <div class="boxbanner"><p>&#128247人像</p></div>
             <div class="acrossNull"></div>
             <div class="across">
-                <img src="img/camera/人像/rx1.jpg" style="margin-top: 35px;margin-bottom: 35px;">
+                <img data-src="img/camera/人像/rx1.jpg" loading="lazy" class="lazy-img" style="margin-top: 35px;margin-bottom: 35px;">
                 <p>王牌飞行员</p>
             </div>
             <div class="acrossNull"></div>
             <div class="across">
-                <img src="img/camera/人像/rx5.png">
+                <img data-src="img/camera/人像/rx5.png" loading="lazy" class="lazy-img">
                 <p>某同学</p>
             </div>
             <div class="verticalNull"></div>
             <div class="vertical">
-                <img src="img/camera/人像/rx6.jpg">
+                <img data-src="img/camera/人像/rx6.jpg" loading="lazy" class="lazy-img">
                 <p>漫展</p>
             </div>
             <div class="verticalNull"></div>
             <div class="vertical">
-                <img src="img/camera/人像/rx3.jpg">
+                <img data-src="img/camera/人像/rx3.jpg" loading="lazy" class="lazy-img">
                 <p>Blitz</p>
             </div>
 
             <div class="boxbanner"><p>&#128247机车</p></div>
             <div class="acrossNull"></div>
             <div class="across">
-                <img src="img/camera/摩托/mt1.jpg">
+                <img data-src="img/camera/摩托/mt1.jpg" loading="lazy" class="lazy-img">
                 <p>西安-SR450</p>
             </div>
             <div class="acrossNull"></div>
             <div class="across">
-                <img src="img/camera/摩托/mt2.jpg">
+                <img data-src="img/camera/摩托/mt2.jpg" loading="lazy" class="lazy-img">
                 <p>北京-V16</p>
             </div>
             <div class="acrossNull"></div>
             <div class="across">
-                <img src="img/camera/摩托/mt3.jpg">
+                <img data-src="img/camera/摩托/mt3.jpg" loading="lazy" class="lazy-img">
                 <p>北京-V16</p>
             </div>
             <div class="acrossNull"></div>
             <div class="across">
-                <img src="img/camera/摩托/mt4.jpg" style="margin-top: 35px;margin-bottom: 35px;">
+                <img data-src="img/camera/摩托/mt4.jpg" loading="lazy" class="lazy-img" style="margin-top: 35px;margin-bottom: 35px;">
                 <p>西安-V16</p>
             </div>
         </div>
@@ -205,10 +205,36 @@
                     </div>
                 </div>
             </div>
-            <script src="./js/audio.js"></script>
         </div>
-
     </div>
-
+<script src="./js/audio.js"></script>
+<script src="./js/lazy-load.js"></script>
+<script>
+    // 为所有图片添加懒加载标记
+    document.addEventListener('DOMContentLoaded', function() {
+        const allImages = document.querySelectorAll('img');
+        allImages.forEach(img => {
+            // 如果不是懒加载图片且没有 data-src，添加懒加载属性
+            if (!img.classList.contains('lazy-img') && 
+                img.src && 
+                !img.src.includes('data:image') &&
+                !img.src.includes('头像') && // 排除头像（已预加载）
+                !img.src.includes('LOGO')) {
+                
+                // 保存原始src
+                img.setAttribute('data-src', img.src);
+                
+                // 设置占位图
+                img.src = `data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='${img.width || 400}' height='${img.height || 300}' viewBox='0 0 ${img.width || 400} ${img.height || 300}'%3E%3Crect width='100%25' height='100%25' fill='%23f5f5f5'/%3E%3C/svg%3E`;
+                
+                // 添加懒加载类
+                img.classList.add('lazy-img');
+                
+                // 添加 loading 属性
+                img.setAttribute('loading', 'lazy');
+            }
+        });
+    });
+</script>
 </body>
 </html>
