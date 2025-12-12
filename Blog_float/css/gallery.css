@@ -1,0 +1,116 @@
+.boxbanner {
+    width: 100%;
+    height: 40px;
+    border-radius: 5px;
+    background-color: rgba(255, 255, 255, 0.8);
+    margin: 20px 0;
+    clear: both;
+}
+.boxbanner p {
+    font: 26px '优设标题黑';
+    line-height: 40px;
+    text-align: center;
+}
+/* 
+竖块，宽251 高380
+竖着的照片，宽247 高330
+边距86
+横块，宽375 高330
+横着的照片，横371竖280
+中间隔开10px
+ */
+.shu {
+    width: 251px;
+    height: 380px;
+    /* border: 1px groove #f1f1f1; */
+    background-color: rgba(255, 255, 255, 0.35);
+    border-radius: 4px;
+    float: left;
+    margin: 10px 0px;
+}
+.shu img {
+    width: 247px;
+    height: 330px;
+    border-radius: 2px;
+    margin: 2px;
+}
+.shu p {
+    line-height: 40px;
+    text-align: center;
+}
+.shubian {
+    width: 86px;
+    height: 380px;
+    float: left;
+}
+.heng {
+    width: 375px;
+    height: 330px;
+    /* border: 1px groove #f1f1f1; */
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 4px;
+    float: left;
+    margin: 10px 0px;
+}
+.heng img {
+    width: 371px;
+    height: 280px;
+    border-radius: 2px;
+    margin: 2px;
+}
+.heng p {
+    line-height: 40px;
+    text-align: center;
+}
+.hengbian {
+    width: 10px;
+    height: 330px;
+    float: left;
+}
+.four {
+    width: 100%;
+    height: 750px;
+}
+
+.vertical {
+    width: 289px;
+    height: 420px;
+    border-radius: 2px;
+    background-color: rgba(255, 255, 255, 0.35);
+    float: left;
+    padding: 2px;
+    margin-bottom: 10px;
+}
+.vertical img {
+    width: 285px;
+    height: 380px;
+    border-radius: 2px;
+}
+.verticalNull {
+    width: 67px;
+    height: 420px;
+    float: left;
+}
+p {
+    font-size: 18px;
+    line-height: 30px;
+    text-align: center;
+}
+.across {
+    width: 384px;
+    height: 325px;
+    border-radius: 2px;
+    background-color: rgba(255, 255, 255, 0.35);
+    float: left;
+    padding: 2px;
+    margin-bottom: 10px;
+}
+.across img {
+    width: 380px;
+    border-radius: 2px;
+}
+.acrossNull {
+    width: 4px;
+    height: 325px;
+    float: left;
+}

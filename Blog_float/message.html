@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>留言</title>
+    <link href="css/index.css" rel="stylesheet" type="text/css">
+    <link href="css/audio.css" rel="stylesheet" type="text/css">
+    <link href="css/message.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+    <!-- 导航条 -->
+    <div class="banner">
+        <!-- logo -->
+        <div class="logo"><img src="img/LOGO.png"></div>
+        <!-- 导航栏 -->
+        <div class="navd">
+            <div class="nav">
+                <ul>
+                    <li><a href="home.html">主页</a></li>
+                    <li><a href="article.html">文章</a></li>                   
+                    <li><a href="gallery.html">图库</a></li>
+                    <li><a href="message.html" class="active">留言</a></li>
+                    <li><a href="about.html">关于</a></li>
+                    <div class="navbox"></div>
+                </ul>
+            </div>
+        </div>
+
+    </div>
+
+
+
+    <!-- 主体内容 -->
+    <div class="bodymain">
+
+        <!-- 左侧 -->
+        <div class="columnleft">
+            <!-- 用户信息 -->
+            <div class="userbox">
+                <img src="img/头像.jpg">
+                <div class="username">
+                    <p>GGGF</p>
+                </div>
+                <div class="userSignature">
+                    <p>愿生活更美好!</p>
+                </div>
+            </div>
+            <!-- 左边栏（热门网站/文章） -->
+            <div class="rowleft">
+                <div class="webTitle">
+                    <p>热门网站</p>
+                </div>
+                <div class="webUrl">
+                    <ul>
+                        <li><a href="https://www.runoob.com/" target="_blank" title="www.runoob.com">菜鸟教程</a></li>
+                        <li><a href="https://www.w3school.com.cn/" target="_blank" title="www.w3school.com.cn">W3School</a></li>
+                        <li><a href="https://developer.mozilla.org/zh-CN/" target="_blank" title="developer.mozilla.org/zh-CN/">MDN</a></li>
+                        <li><a href="https://www.csdn.net/" target="_blank" title="www.csdn.net">CSDN</a></li>
+                        <li><a href="http://www.yishimei.cn/" target="_blank" title="www.yishimei.cn">亦是美网络</a></li>
+                        <li><a href="https://www.icourse163.org/" target="_blank" title="www.icourse163.org">MOOC慕课</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- 主体 -->
+        <div class="rowmain">
+
+            <div class="messageBoards">
+                <div class="messageBanner">
+                    <div class="messageUser">
+                        <img src="img/头像.jpg">
+                        <p>GGGF：</p>
+                        <span class="messageTime">2023/12/19 16:39</span>
+                    </div>
+                    <div class="messageSpeak">
+                        <h2>Version:0.2.2.1</h2>
+                        <p>新增音乐播放器。</p>
+                    </div>
+                </div>
+                <div class="messageBanner">
+                    <div class="messageUser">
+                        <img src="img/头像.jpg">
+                        <p>GGGF：</p>
+                        <span class="messageTime">2023/12/18 20:45</span>
+                    </div>
+                    <div class="messageSpeak">
+                        <h2>Version:0.2.2.0</h2>
+                        <p>更新框架。</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="messageBox">
+                
+                <form action="*" method="get">
+                    <textarea class="messageBoxIn" name="message" placeholder="请输入..."></textarea>
+
+                    <label for="anonymity">匿名</label>
+                    <input type="checkbox" id="anonymity" name="anonymity">
+                    
+                    <input class="btn" type="file" name="pic" value="附件">
+
+                    <input class="btnSubmit" type="submit" name="btnSubmit" value="提交">
+                </form>
+            </div>
+        </div>
+
+        <!-- 右侧 -->
+        <div class="columnright">
+            <!-- 右边栏（音乐播放器） -->
+            <div class="rowright">
+                <div class="musicbox">
+                    <div class="musicbox">
+                        <audio id="audioTag"></audio>
+                        <div class="musicLrcBox">
+                            <!-- 音乐介绍 -->
+                            <div class="introduction-container introductionBg">
+                                <div class="text-container introductionBg">
+                                    <div id="music-title" class="introductionBg">音乐</div>
+                                    <div class="author-container introductionBg">作者：
+                                        <span id="author-name" class="introductionBg">未知</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- 进度条 -->
+                            <div class="a-progress">
+                                <div class="pgs-total" id="progress-total">
+                                    <div class="pgs-play" id="progress" style="width: 0%;"></div>
+                                </div>
+                            </div>
+                            <!-- 播放时长 -->
+                            <div class="time-container">
+                                <span class="played-time" id="playedTime">00:00</span>&nbsp;/&nbsp;
+                                <span class="audio-time" id="audioTime">00:00</span>
+                            </div>
+                        </div>
+                        <div class="musicControlBox">
+                            <!-- 播放模式 -->
+                            <div id="playMode" class="center-icon mode iconBg"></div>
+                            <!-- 上一首 -->
+                            <div id="skipForward" class="center-icon s-right iconBg"></div>
+                            <!-- 暂停按钮 -->
+                            <div id="playPause" class="icon-play iconBg"></div>
+                            <!-- 下一首 -->
+                            <div id="skipBackward" class="center-icon s-left iconBg"></div>
+                            <!-- 倍速调节 -->
+                            <div id="speed" class="speed iconBg">1.0X</div>
+                        </div>
+                        <div class="musicListBox">
+                            <div class="all-list">
+                                <div id="music0">告白气球</div>
+                                <div id="music1">夜曲</div>
+                                <div id="music2">夜的第七章</div>
+                                <div id="music3">Love Story</div>
+                                <div id="music4">i don't wanna see..</div>
+                                <div id="music5">爱人错过</div>
+                                <div id="music6">侧脸</div>
+                                <div id="music7">Shape of You</div>
+                                <div id="music8">虚拟</div>
+                                <div id="music9">也罢</div>
+                                <div id="music10">Dance Monkey</div>
+                                <div id="music11">FRIDAY9</div>
+                                <div id="music12">Old Town Road</div>
+                                <div id="music13">下个，路口，见</div>         
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <script src="./js/audio.js"></script>
+        </div>
+
+    </div>
+
+</body>
+</html>

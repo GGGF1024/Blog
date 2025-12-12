@@ -1,0 +1,53 @@
+.readerBox {
+    width: 100%;
+    height: auto;
+}
+.rowmain h1 {
+    display: block;
+    font: 30px '优设标题黑';
+}
+.rowmain h2 {
+    display: block;
+    font: 25px '优设标题黑';
+}
+.rowmain p {
+    text-indent: 40px;
+    font: 20px '楷体';
+}
+
+.downloadBox {
+    width: 100%;
+    height: auto;
+}
+.downloadBox table {
+    caption-side: top;
+    padding: 0 50px;
+}
+.downloadBox th,td {
+    table-layout: fixed;
+    width: 300px;
+    border-radius: 5px;
+}
+.downloadBox th {
+    font: 30px '优设标题黑';
+    height: 50px;
+    line-height: 50px;
+}
+.downloadBox td {
+    height: 50px;
+    font: 20px '楷体';
+    line-height: 50px;
+    text-align: center;
+}
+.downloadBoxA {
+    width: 80px;
+}
+.downloadBoxA a {
+    display: block;
+    color: black;
+    background-color: rgba(255, 255, 255, 0.2);
+}
+.downloadBoxA a:hover {
+    border-radius: 5px;
+    background-color: rgba(255, 255, 255, 0.6);
+}

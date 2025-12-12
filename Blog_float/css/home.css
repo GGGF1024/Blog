@@ -1,0 +1,88 @@
+.box1 {
+    width: 100%;
+    height: auto;
+    background-color: white;
+}
+.box1 h1 {
+    display: block;
+    font: 34px '优设标题黑';
+}
+.box1 p {
+    text-indent: 40px;
+    font-size: 20px;
+    font-family: '楷体';
+}
+.myava {
+    width: 300px;
+    border-radius: 5px;
+    float: left;
+}
+.myname {
+    width: 440px;
+    height: auto;
+    border-radius: 5px;
+    float: left;
+    margin-left: 20px;
+    padding: 20px;
+}
+.myname1 {
+    width: 50%;
+    height: auto;
+    float: left;
+}
+.myname2 {
+    width: 50%;
+    height: auto;
+    float: left;
+}
+.myname1 ul {
+    list-style-type: none;
+}
+.myname1 ul li {
+    line-height: 80px;
+}
+.myname2 ul {
+    list-style-type: none;
+}
+.myname2 ul li {
+    line-height: 80px;
+}
+.textbox {
+    width: 100%;
+    margin-top: 320px;
+}
+.textbox1 {
+    width: 50%;
+    height: auto;
+    float: left;
+}
+.textbox2 {
+    width: 50%;
+    height: auto;
+    float: left;
+}
+dl dt {
+    font-size: 18px;
+}
+dl dd {
+    margin-left: 2rem;
+    line-height: 30px;
+}
+.textbox2::after {
+    content: "";
+    display: inline-block;
+    clear: both;
+}
+.textbox3 {
+    float: left;
+    width: 100%;
+    margin-top: 20px;
+}
+.textbox3 dd {
+    float: left;
+}
+.textbox3 img {
+    width: 100%;
+    border-radius: 5px;
+    margin: 20px 0px;
+}

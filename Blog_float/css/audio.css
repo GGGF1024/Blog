@@ -1,0 +1,221 @@
+/* 音乐介绍 */
+.introductionBg {
+    background-color: transparent;
+    color: black;
+}
+.introduction-container {
+    width: 100%;
+    height: auto;
+    margin-top: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    float: left;
+}
+.text-container {
+    width: auto;
+    text-align: center;
+    padding-top: 10px;
+}
+
+#music-title {
+    color: rgba(0, 0, 0, 0.888);
+    font-size: 20px;
+    line-height: 20px;
+}
+
+.author-container {
+    color: rgb(0, 0, 0);
+    font-size: medium;
+    line-height: 40px;
+}
+/* 进度条样式 */
+.a-progress {
+    width: 100%;
+    color: #42b680;
+    background-color: transparent;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+.pgs-total {
+    width: 100%;
+    height: 20px;
+    background-color: transparent;
+    border-radius: 10px;
+    position: relative;
+    top: 158px;
+}
+.a-progress .pgs-total:after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 7px;
+    bottom: 7px;
+    background-color: #bbbbbb;
+    border-radius: 10px;
+    z-index: 1;
+}
+.a-progress .pgs-total .pgs-play:before {
+    content: '';
+    position: absolute;
+    top: 7px;
+    bottom: 7px;
+    left: 0;
+    right: 0;
+    background-color: #0011ff;
+    border-radius: 10px;
+    z-index: 2;
+}
+.a-progress .pgs-total .pgs-play {
+    height: 100%;
+    position: relative;
+    border-radius: 10px;
+}
+
+
+/* 时间样式 */
+.time-container {
+    width: 100px;
+    float: left;
+    color: white;
+    font-weight: 300;
+    line-height: 20px;
+    position: relative;
+    top: 65px;
+    background-color: transparent;
+    color: black;
+    margin-left: calc(50% - 50px);
+}
+
+.played-time {
+    left: 10px;
+    text-align: left;
+    background-color: transparent;
+}
+
+.audio-time {
+    right: 10px;
+    text-align: right;
+    background-color: transparent;
+}
+
+/* 中间按钮 */
+.center-icon {
+    float: left;
+    width: 30px;
+    height: 30px;
+    margin: 0 8px;
+}
+.center-icon:hover {
+    opacity: 0.7;
+}
+.center-icon:active {
+    opacity: 1;
+}
+.iconBg {
+    background-color: transparent;
+}
+/* 播放模式 */
+.mode {
+    background-image: url("../img/mode1.png");
+    background-size: 100% 100%;
+}
+/* 上一首 */
+.s-left {
+    background-image: url("../img/下一首.png");
+    background-size: 100% 100%;
+}
+/* 继续播放 */
+.icon-play {
+    float: left;
+    width: 45px;
+    height: 45px;
+    margin: 0 2px;
+    background-image: url("../img/继续播放.png");
+    background-size: 100% 100%;
+}
+/* 暂停播放 */
+.icon-pause {
+    float: left;
+    width: 45px;
+    height: 45px;
+    margin: 0 2px;
+    background-image: url("../img/暂停.png");
+    background-size: 100% 100%;
+}
+/* 下一首 */
+.s-right {
+    background-image: url("../img/上一首.png");
+    background-size: 100% 100%;
+}
+/* 倍速调节 */
+.speed {
+    display: block;
+    width: 45px;
+    float: left;
+    color: white;
+    text-align: center;
+}
+.speed:hover {
+    opacity: 0.5;
+    cursor: default;
+}
+
+.speed:active {
+    opacity: 0.9;
+    cursor: default;
+}
+
+
+
+/* 音乐列表 */
+.all-list div {
+    height: 50px;
+    line-height: 50px;
+    color: black;
+    font-weight: 300;
+    padding: 0 30px;
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+.all-list div:hover {
+    background-color: lightseagreen;
+    cursor: default;
+}
+
+.rotate-play {
+    animation: rotateAni 10s infinite linear;
+    animation-play-state: paused;
+    animation-fill-mode: forwards;
+    -webkit-animation-fill-mode: forwards;
+}
+/* 音量调节 */
+.volume {
+    background-image: url("../img/music/音量.png");
+    background-size: 100% 100%;
+}
+
+/*音量横条样式*/
+#volumn-togger {
+    width: 100px;
+    height: 2px;
+    appearance: none;
+    background-color: #dcdcdc;
+    outline: none;
+    overflow: hidden;
+    border-radius: 15px;
+    box-shadow: inset 0 0 5px rgb(91, 91, 91);
+}
+
+/*音量拖动块的样式*/
+#volumn-togger::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 1px;
+    height: 5px;
+    border-radius: 50%;
+    background: #42b680;
+    cursor: pointer;
+    border: 4px solid #33333300;
+    box-shadow: -407px 0 0 400px #42b680;
+}

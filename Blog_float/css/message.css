@@ -1,0 +1,82 @@
+.messageBoards {
+    width: 780px;
+    height: 600px;
+    border: 5px solid rgba(0, 141, 160, 0.2);
+    overflow: scroll;
+    overflow-x: hidden;
+}
+.messageBanner {
+    /* background-color: green; */
+    width: auto;
+    height: auto;
+    border-bottom: 8px solid rgba(255, 255, 255, 0.8);
+}
+.messageUser {
+    background-color: rgba(255, 255, 255, 0.5);
+    width: auto;
+    height: 60px;
+    padding: 5px;
+}
+.messageUser img {
+    width: 50px;
+    border-radius: 100%;
+    border: 1px solid black;
+    float: left;
+}
+.messageUser p {
+    float: left;
+    font: 24px '优设标题黑';
+    text-align: left;
+    margin-left: 10px;
+    line-height: 50px;
+}
+.messageTime {
+    float: right;
+    font-size: 14px;
+    line-height: 50px;
+    margin-right: 5px;
+}
+.messageSpeak {
+    width: 100%;
+    height: auto;
+    background-color: rgba(255, 255, 255, 0.2);
+    padding: 10px;
+}
+.messageSpeak h1 {
+    text-align: center;
+    font: 28px '黑体';
+}
+.messageSpeak h2 {
+    font: 24px '黑体';
+}
+.messageSpeak p {
+    text-indent: 2rem;
+}
+
+.messageBox {
+    width: 780px;
+    height: 200px;
+    border: 5px solid rgba(0, 141, 160, 0.2);
+}
+.messageBoxIn {
+    width: 100%;
+    height: 150px;
+    overflow: scroll;
+    overflow-x: scroll;
+    resize: none;
+    font-size: 18px;
+    background-color: rgba(0, 0, 0, 0.1);
+}
+.messageBox label {
+    line-height: 30px;
+}
+.btn {
+    width: auto;
+    height: 30px;
+}
+.btnSubmit {
+    float: right;
+    margin-right: 10px;
+    width: 50px;
+    height: 30px;
+}

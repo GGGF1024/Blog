@@ -1,0 +1,332 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style-type: none;
+    text-decoration: none;
+}
+body {
+    background-color: #8da1f8;
+    min-width: 1400px;
+}
+
+/* 导航栏 */
+.banner {
+    height: 50px;
+    width: 100%;
+    position: sticky;
+    top: 0;
+    z-index: 5;
+    margin-top: 10px;
+}
+.navd {
+    justify-content: center;
+    width: 1360px;
+    margin-left: calc(50% - 680px);
+}
+.nav {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    top: 0;
+    background-color: white;
+    box-shadow: 0 0 15px 2px rgba(0, 0, 0, 1);
+    border-radius: 5px;
+}
+.nav ul {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    right: 5%;
+}
+.nav ul .navbox {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: calc((100% / 5)*1);
+    height: 8px;
+    border-radius: 10px;
+    transition: .5s;
+}
+.nav ul li {
+    width: 100%;
+    text-align: center;
+}
+.nav ul li a {
+    color: rgb(70, 100, 180);
+    font: 30px '优设标题黑';
+    display: block;
+    width: 100%;
+    height: 100%;
+    line-height: 50px;
+}
+.nav ul li a.active {
+    color: rgb(92, 92, 92);
+    line-height: 50px;
+    font-size: 36px;
+}
+
+.nav ul li:nth-child(1):hover~.navbox {
+    left: calc(100% / 5 *0);
+    background-color: red;
+}
+.nav ul li:nth-child(2):hover~.navbox {
+    left: calc(100% / 5 *1);
+    background-color: rgb(143, 75, 40);
+}
+.nav ul li:nth-child(3):hover~.navbox {
+    left: calc(100% / 5 *2);
+    background-color: rgb(251, 210, 106);
+}
+.nav ul li:nth-child(4):hover~.navbox {
+    left: calc(100% / 5 *3);
+    background-color: rgb(129, 216, 207);
+}
+.nav ul li:nth-child(5):hover~.navbox {
+    left: calc(100% / 5 *4);
+    background-color: rgb(0, 47, 167);
+}
+.logo img {
+    float: left;
+    width: 170px;
+    height: 50px;
+    margin-left: 50px;
+    margin-right: 20px;
+}
+
+
+/* 主体 */
+.bodymain {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.bodymain:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+.columnleft {
+    width: calc(50% - 400px);
+    height: auto;
+    min-width: 290px;
+    float: left;
+    position: sticky;
+    margin-top: 150px;
+    top: -160px;
+}
+.columnright {
+    width: calc(50% - 400px);
+    height: auto;
+    min-width: 290px;
+    float: left;
+    position: sticky;
+    top: 60px;
+    margin-top: 250px;
+}
+
+/* 用户信息 */
+.userbox {
+    background-color: rgba(255, 255, 255, 0.5);
+    box-shadow: 0 0 15px 1px rgba(0, 0, 0, 0.5);
+    border-radius: 5px;
+    padding: 10px;
+    width: 250px;
+    height: 200px;
+    float: right;
+    margin: 0 20px 20px 0;
+}
+.userbox img {
+    width: 100px;
+    border-radius: 100%;
+    float: left;
+}
+.username {
+    width: 80px;
+    height: 100px;
+    margin-left: 110px;
+}
+.username p {
+    font: 40px '优设标题黑';
+    color: black;
+    text-align: center;
+    line-height: 100px;
+}
+.userSignature {
+    width: 100%;
+    height: 80px;
+    /* background-color: yellow; */
+}
+.userSignature p {
+    font: 30px '楷体';
+    font-weight: bold;
+    text-align: center;
+    line-height: 80px;
+}
+
+/* 左栏（热门网站/文章） */
+.rowleft {
+    background-color: rgba(255, 255, 255, 0.5);
+    box-shadow: 0 0 15px 1px rgba(0, 0, 0, 0.5);
+    border-radius: 5px;
+    padding: 10px;
+    float: right;
+    width: 250px;
+    height: auto;
+    margin-right: 20px;
+    clear: both;
+}
+.webTitle {
+    width: 100%;
+    height: 50px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    background-color: lightsalmon;
+}
+.webTitle p {
+    font: 30px '优设标题黑';
+    text-align: center;
+    line-height: 50px;
+}
+.webUrl {
+    width: 100%;
+    height: auto;
+}
+.webUrl ul {
+    list-style-type: none;
+
+}
+.webUrl li { 
+    margin: 10px;
+}
+.webUrl a {
+    display: block;
+    height: 40px;
+    text-align: center;
+    font-size: 20px;
+    color: black;
+    line-height: 40px;
+    border-radius: 5px;
+}
+.webUrl a:hover {
+    color: white;
+    background-color: lightsalmon;
+}
+
+
+
+
+
+/* 右栏（音乐播放器） */
+.rowright {
+    background-color: rgba(255, 255, 255, 0.5);
+    box-shadow: 0 0 15px 1px rgba(0, 0, 0, 0.5);
+    border-radius: 5px;
+    padding: 10px;
+    float: left;
+    width: 250px;
+    height: 520px;
+    margin-left: 20px;
+    border: px ridge rgb(0, 0, 0);
+}
+.musicbox {
+    width: 100%;
+    height: 100%;
+    /* border: 5px ridge rgb(0, 0, 0); */
+    border-radius: 5px;
+}
+.musicLrcBox {
+    width: 100%;
+    height: 180px;
+    background-color: rgb(238, 243, 214);
+    border: 3px ridge rgb(0, 0, 0);
+    
+}
+.musicControlBox {
+    width: 100%;
+    height: 60px;
+    float: left;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* background-color: rgba(255, 255, 255, 0.5); */
+    /* border-top: 5px ridge rgb(0, 0, 0);
+    border-bottom: 5px ridge rgb(0, 0, 0); */
+}
+.musicListBox {
+    width: 100%;
+    height: 250px;
+    background-color: transparent;
+    overflow: scroll;
+    overflow-x: hidden;
+    border: 3px ridge rgb(0, 0, 0);
+}
+
+.musicListBox::-webkit-scrollbar
+{
+    /*滚动条整体样式*/
+    width: 6px;
+}
+.musicListBox::-webkit-scrollbar-thumb
+{
+    /*滚动条里面小方块*/
+    border-radius: 10px;
+    background: rgba(0, 255, 234, 0.2);
+    box-shadow: inset 0 0 2px;
+}
+
+/* 滚动条底层颜色! */
+.musicListBox::-webkit-scrollbar-track{
+    border-radius: 1rem;
+    background: rgba(255, 255, 255, 0.5);
+}
+
+
+
+
+
+
+
+
+/* 主体 */
+.rowmain {
+    background-color: rgba(255, 255, 255, 0.5);
+    box-shadow: 0 0 15px 1px rgba(0, 0, 0, 0.5);
+    border-radius: 5px;
+    padding: 10px;
+    width: 800px;
+    height: auto;
+    float: left;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media screen and (max-width: 1800px) {
+    .logo {
+        display: none;
+    }
+    .navd {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        margin: 0;
+    }
+    /* .columnright {
+        display: none;
+    } */
+}
+/* @media screen and (max-width: 1400px) {
+    .columnright {
+        display: none;
+    }
+} */
